@@ -1,0 +1,59 @@
+<!DOCTYPE html> 
+<html> 
+	<body> 
+		<h2>2019 Güz Döneminin ilk ödevi</h2> 
+		<br>
+		<h2>Mehmet Can Kaval 2019280039<h2>
+		<label for="id1">Metin kutusu 1</label> 
+		<input type='text' id='id1' onkeyup="rakamKontrol(this)" />  
+		<br> 
+		<label for="id2">Metin kutusu 2</label> 
+		<input type='text' id='id2' onkeyup="rakamKontrol(this)" />  
+		<br><br> 
+		<button type="button" onclick="topla()">Topla</button> 
+		<br><br> 
+		<label for="id3">Metin kutusu 3</label> 
+		<input type='text' id='id3' />  
+		<br> 
+		<label for="id4">Metin kutusu 4</label> 
+		<input type='text' id='id4' />  
+		<br><br> 
+		<button type="button" onclick="metinBirlestir()">Yapıştır</button> 
+	</body>
+	<script>
+		function topla() {
+			var sayi1 = Number(document.getElementById('id1').value);
+			var sayi2 = Number(document.getElementById('id2').value);
+			var yeniSayi = sayi1 + sayi2;
+			
+		alert(yeniSayi);
+		}
+		
+		function metinBirlestir(){
+			var metin1 =document.getElementById('id3').value;
+			var metin2 =document.getElementById('id4').value;
+			var birlestir =metin1 + " "+ metin2; 
+			alert (birlestir);
+		}
+		
+		function rakamKontrol(nesne){
+			var GecerliNesneler = "0123456789";
+			var Numara=true;
+			var Karakter;
+			for(i=0; i<nesne.value.length && Numara==true; i++) {
+				Karakter = nesne.value.charAt(i);
+				if(GecerliNesneler.indexOf(Karakter) == -1) {
+					nesne.value = nesne.value.substring(0,i);
+					break;
+				}
+			}
+			return Numara;
+			/*			Kaynaklar;
+	https://www.yazilimkodlama.com/web/javascript-toplama-ornegi/ 
+	https://www.youtube.com/watch?v=H_RT1XRqi8I&list=PLh9ECzBB8tJPC_s05znTJqiQkRDIEpWpJ
+	https://developer.mozilla.org/tr/docs/Web/JavaScript/Guide/Fonksiyonlar
+	*/
+		}
+	</script>
+	
+</html
